@@ -12,7 +12,7 @@ public class Line {
         this.sections = lineStrategy.generate(sectionCount);
     }
 
-    public List<Boolean> getSections() {
+    public List<Boolean> getLine() {
         return Collections.unmodifiableList(sections);
     }
 
@@ -26,7 +26,7 @@ public class Line {
         }
         return startPosition;
     }
-  
+
     private void validateOutBound(int startPoint) {
         if (startPoint < 0 || startPoint > sections.size()) {
             throw new IllegalArgumentException("line 범위 밖의 시작점입니다.");

@@ -17,7 +17,7 @@ public class LadderGame {
     public List<List<Boolean>> getLines() {
         return ladder.getLines()
                 .stream()
-                .map(Line::getSections)
+                .map(Line::getLine)
                 .collect(Collectors.toList());
     }
 

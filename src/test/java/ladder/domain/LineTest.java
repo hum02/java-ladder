@@ -24,7 +24,7 @@ class LineTest {
         Line line = new Line(fixedLineStrategy, 4);
 
         // expected
-        assertThat(line.getSections()).containsExactly(true, false, true, false);
+        assertThat(line.getLine()).containsExactly(true, false, true, false);
     }
 
     @ParameterizedTest
