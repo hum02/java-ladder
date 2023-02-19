@@ -28,12 +28,13 @@ class LineTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = {"0:1", "1:1", "2:3", "3:3"}, delimiter = ':')
+    @CsvSource(value = {"0:1", "1:0", "2:3", "3:2", "4:4"}, delimiter = ':')
     @DisplayName("시작점에서 라인을 따라 움직인 도착점을 계산한다.")
     void line_move_from_start_position(int start, int expected) {
         //given
-        LineStrategy fixedStrategy = new FixedLineStrategy(List.of(List.of(true, false, true)));
-        Line line = new Line(fixedStrategy, 3);
+        LineStrategy fixedStrategy = new FixedLineStrategy(List.of(List.of(true, false, true, false)));
+        Line line = new Line(fixedStrategy, 4);
+        //|--|  |--|  |
 
         //when
         int arrive = line.moveFrom(start);
