@@ -15,4 +15,21 @@ public class Line {
     public List<Boolean> getSections() {
         return Collections.unmodifiableList(sections);
     }
+
+    public int moveFrom(int startPosition) {
+        validateOutBound(startPosition);
+        if (startPosition == sections.size()) {
+            return startPosition;
+        }
+        if (sections.get(startPosition) == true) {
+            return startPosition + 1;
+        }
+        return startPosition;
+    }
+  
+    private void validateOutBound(int startPoint) {
+        if (startPoint < 0 || startPoint > sections.size()) {
+            throw new IllegalArgumentException("line 범위 밖의 시작점입니다.");
+        }
+    }
 }
